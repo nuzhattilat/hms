@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Home Page</title>
+    <style>
+        {% load static %}
+
+        body {
+            background-color: white;
+            font-family: 'Times New Roman', serif;
+            color: black;
+            margin: 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        nav.top-nav {
+            background-color: #6ac5fe;
+            padding: 10px;
+            text-align: right;
+        }
+
+        nav.top-nav a {
+            color: black;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hospital-name {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .main-content img {
+            max-width: 45%;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            max-width: 50%;
+        }
+
+        .register-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
+        }
+
+        .register-btn {
+            background-color: #90E0EF;
+            padding: 15px 25px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .register-btn a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav.bottom-nav {
+            background-color: #6ac5fe;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        nav.bottom-nav p {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hospital-name">Hospital</div>
+
+    <nav class="top-nav">
+        <a href="/doctor" class="doctor-link">Doctor</a> <!-- New link for Doctor -->
+        <a href="/login" class="login-link">Login</a>
+    </nav>
+
+    <div class="main-content">
+        <img src="{% static 'images/home.jpeg' %}" alt="Hospital Image"> 
+        <p>Welcome to our hospital. We provide excellent healthcare services with the best doctors and modern facilities.
+            We hope to give you healthy and assured care.
+        </p>
+    </div>
+
+    <div class="register-btn-container">
+        <div class="register-btn">
+            <a href="{% url 'register' %}">Register Now</a>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <p>Contact Us:</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@hospital.com</p>
+        <p>Address: 123 Healthcare St, City, Country</p>
+    </nav>
+
+</body>
+</html>

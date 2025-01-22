@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Patient Registration</title>
+        <style>
+            body {
+                font-family: 'Times New Roman', serif;
+                background-color: white;
+                color: black;
+                margin: 0;
+                padding: 0;
+            }
+    
+            nav.top-nav {
+                background-color: #6ac5fe;
+                padding: 11px;
+                text-align: right;
+            }
+    
+            nav.top-nav a {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            .hospital-name {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                color: black;
+            }
+    
+            .content-container {
+                width: 40%;
+                margin: 50px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                background-color: #f9f9f9;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+    
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+    
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+    
+            label {
+                font-weight: bold;
+            }
+    
+            input {
+                padding: 10px;
+                margin: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            button {
+                padding: 10px;
+                border: none;
+                background-color: #90E0EF;
+                color: black;
+                font-weight: bold;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            button:hover {
+                background-color: #5bb3e4;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="hospital-name"><a href="/" style="text-decoration: none; color: black;">Hospital</a></div>
+    
+        <nav class="top-nav">
+            <a href="/login">Login</a>
+        </nav>
+    
+        <div class="content-container">
+            <h2>Patient Registration</h2>
+            <form method="POST" action="{% url 'register' %}">
+                {% csrf_token %}
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" required>
+    
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" required>
+    
+                <label for="symptoms">Symptoms</label>
+                <input type="text" name="symptoms" id="symptoms">
+    
+                <label for="medications">Previous Medications (if any)</label>
+                <input type="text" name="medications" id="medications">
+    
+                <label for="emergencyContact">Emergency Contact</label>
+                <input type="tel" name="emergencyContact" id="emergencyContact" required>
+    
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+    
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+    
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+    
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    
+    </body>
+    </html>
+    
+</head>

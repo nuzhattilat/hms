@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav.top-nav {
+            background-color: #6ac5fe;
+            padding: 20px;
+            text-align: right;
+        }
+
+        nav.top-nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hospital-name {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .profile-container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+    
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+    
+        th {
+            font-weight: bold;
+            background-color: #f2f2f2;
+            width: 30%; /* Narrower left column for headers */
+        }
+    
+        td {
+            width: 70%; /* Wider right column for data */
+        }
+
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #90E0EF;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hospital-name"><a href="/" style="text-decoration: none; color: black;">Hospital</a></div>
+
+    <nav class="top-nav">
+
+        
+    </nav>
+
+    <div class="profile-container">
+        <h2>Doctor Profile</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{ doctor.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ doctor.email }}</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td>{{ doctor.dob }}</td>
+            </tr>
+            <tr>
+                <th>Specialization</th>
+                <td>{{ doctor.specialization }}</td>
+            </tr>
+        </table>
+
+        <form method="POST" action="{% url 'logout' %}">
+            
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+</body>
+</html>
